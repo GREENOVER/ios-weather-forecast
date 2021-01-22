@@ -16,6 +16,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.dataSource = self
+        tableView.delegate = self
+        
         settingBackgroundImage()
         
         settingLocationManager()
@@ -106,4 +109,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         let result = try! JSONDecoder().decode(ForecastList.self, from: jsonData)
     }
+}
+
+extension ViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
+    }
+    
+    
 }
