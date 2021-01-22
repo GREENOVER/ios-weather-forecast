@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9A7813AF25BA8CED00F25AEC /* CurrentWeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7813AE25BA8CED00F25AEC /* CurrentWeatherTableViewCell.swift */; };
+		9A7813B425BA908F00F25AEC /* ForecatListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7813B325BA908F00F25AEC /* ForecatListTableViewCell.swift */; };
 		9AB6162E25B6C7270014E132 /* WeatherIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB6162D25B6C7270014E132 /* WeatherIcon.swift */; };
 		9AB6163325B6C9D80014E132 /* Temperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB6163225B6C9D80014E132 /* Temperature.swift */; };
 		9AB6163825B6CB250014E132 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB6163725B6CB250014E132 /* CurrentWeather.swift */; };
@@ -42,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		9A7813AE25BA8CED00F25AEC /* CurrentWeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherTableViewCell.swift; sourceTree = "<group>"; };
+		9A7813B325BA908F00F25AEC /* ForecatListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecatListTableViewCell.swift; sourceTree = "<group>"; };
 		9AB6162D25B6C7270014E132 /* WeatherIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherIcon.swift; sourceTree = "<group>"; };
 		9AB6163225B6C9D80014E132 /* Temperature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temperature.swift; sourceTree = "<group>"; };
 		9AB6163725B6CB250014E132 /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				C79C8CF725ADDDF200EEE3F1 /* ViewController.swift */,
 				C79C8CF925ADDDF200EEE3F1 /* Main.storyboard */,
 				9A7813AE25BA8CED00F25AEC /* CurrentWeatherTableViewCell.swift */,
+				9A7813B325BA908F00F25AEC /* ForecatListTableViewCell.swift */,
 				C79C8CFC25ADDDF300EEE3F1 /* Assets.xcassets */,
 				C79C8CFE25ADDDF300EEE3F1 /* LaunchScreen.storyboard */,
 				C79C8D0125ADDDF300EEE3F1 /* Info.plist */,
@@ -290,6 +293,7 @@
 				9AB6162E25B6C7270014E132 /* WeatherIcon.swift in Sources */,
 				9AB6163D25B6CD3E0014E132 /* Forecast.swift in Sources */,
 				C79C8CF425ADDDF200EEE3F1 /* AppDelegate.swift in Sources */,
+				9A7813B425BA908F00F25AEC /* ForecatListTableViewCell.swift in Sources */,
 				9AB6163325B6C9D80014E132 /* Temperature.swift in Sources */,
 				9AB6163825B6CB250014E132 /* CurrentWeather.swift in Sources */,
 				C79C8CF625ADDDF200EEE3F1 /* SceneDelegate.swift in Sources */,
