@@ -113,7 +113,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        if section == 0 {
+            return 1
+        } else {
+            return 30
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -122,3 +126,4 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     
 }
+    
