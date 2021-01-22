@@ -11,11 +11,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     private var currentWeather: CurrentWeather?
     private var forecastList: ForecastList?
     
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        settingBackgroundImage()
+        
         settingLocationManager()
         searchForLocationInformation()
+    }
+    
+    func settingBackgroundImage() {
+        let imageView = UIImageView(image: UIImage(named: "backgroundImage"))
+        self.tableView.backgroundView = imageView
     }
     
     func settingLocationManager() {
