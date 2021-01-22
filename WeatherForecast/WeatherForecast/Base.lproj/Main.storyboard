@@ -62,7 +62,7 @@
                                             <outlet property="rangeOfTemperature" destination="TPo-hb-6k2" id="6IS-ZE-rbK"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="49" id="ifS-X4-aYF">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="49" id="ifS-X4-aYF" customClass="ForecatListTableViewCell" customModule="WeatherForecast" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="147" width="390" height="49"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ifS-X4-aYF" id="JEh-j9-BLE">
@@ -89,6 +89,11 @@
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="date" destination="QOV-uW-JNN" id="yDP-UQ-kvU"/>
+                                            <outlet property="temperature" destination="PfE-h0-rCb" id="9MM-Zh-x5R"/>
+                                            <outlet property="weatherImageView" destination="v9x-kK-Nnf" id="o3B-cL-bzd"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
