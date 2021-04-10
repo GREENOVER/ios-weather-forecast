@@ -11,13 +11,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     private var currentWeather: CurrentWeather?
     private var forecastList: ForecastList?
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var weatherTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.dataSource = self
-        tableView.delegate = self
+        weatherTableView.dataSource = self
+        weatherTableView.delegate = self
         
         settingBackgroundImage()
         
@@ -27,7 +27,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     func settingBackgroundImage() {
         let imageView = UIImageView(image: UIImage(named: "backgroundImage"))
-        self.tableView.backgroundView = imageView
+        self.weatherTableView.backgroundView = imageView
     }
     
     func settingLocationManager() {
@@ -93,8 +93,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             return
         }
         
-        let result = try! JSONDecoder().decode(CurrentWeather.self, from: jsonData)
-    }
+        let currentWeatherResult = try! JSONDecoder().decode(CurrentWeather.self, from: jsonData)    }
     
     func forecastListDataDecoding() {
         guard let forecastListUrl = URL(string: formattingForecastUrl(lat: latitude, lon: longitude, api: apiKey)) else {
@@ -107,21 +106,27 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             return
         }
         
-        let result = try! JSONDecoder().decode(ForecastList.self, from: jsonData)
+        let forecastListResult = try! JSONDecoder().decode(ForecastList.self, from: jsonData)
     }
 }
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return 1
-        } else {
-            return 30
-        }
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        guard let currentWeatherCell = weatherTableView.dequeueReusableCell(withIdentifier: "CurrentWeatherCell") as? CurrentWeatherTableViewCell else {
+            return UITableViewCell()
+        }
+        
+        guard let forecastListCell = weatherTableView.dequeueReusableCell(withIdentifier: "ForcastListCell") as? ForecatListTableViewCell else {
+            return UITableViewCell()
+        }
+        
+        currentWeatherCell.rangeOfTemperature.text = "fdasfadsfdasf"
+        
+        return currentWeatherCell
     }
     
     
