@@ -1,7 +1,8 @@
 # iOS Weather Forecast Application Project
 ### 날씨정보를 알려주는 기능을 구현한 프로젝트
+[Ground Rule](https://github.com/GREENOVER/ios-weather-forecast/blob/main/GroundRule.md)
 ***
-#### What have I done?
+#### What I learned✍️
 - UITableView
 - JSON
 - Decode
@@ -14,7 +15,7 @@
 - XCTest
 - UITest
 
-#### What I learned
+#### What have I done🧑🏻‍💻
 - 테이블뷰를 통한 날씨정보 화면을 구현하였다.
 - 날씨정보에 대해 JSON 데이터로 받아 디코딩을 통해 가공하여 구현하였다.
 - UnitTemperature 내장 메서드를 이용해 온도의 최저/최고/평균을 계산하고 변환해주었다.
