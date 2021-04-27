@@ -64,8 +64,18 @@
 - 해결방안
   - 유닛테스트에서 JSON데이터를 네트워크로 불러오는것이 아닌 MOCK 데이터를 만들어 테스트를 하는것이 더 안전하다.
 
-
-
+- 문제점 (3)
+  - 테이블 뷰에 배경 이미지를 입혀주고 그 위 셀을 구현하였을때 배경이 묻히는 문제
+- 원인
+  - 아래와 같이 뷰 구조 디버깅을 살펴보면 테이블 뷰에 배경이미지 위에 셀들의 각 UIView가 담겨있다. 이부분의 배경이 하얗기에 아래 배경이 보이지 않게 되는것이다.
+  <img width="610" alt="스크린샷 2021-04-27 오후 2 32 37" src="https://user-images.githubusercontent.com/72292617/116190461-ab281b80-a765-11eb-92a9-6242fe2e1454.png">
+- 해결방안
+  - 해당 테이블 뷰 셀과 UIView의 투명도를 설정해주어 뒷 배경 이미지가 보이도록 할 수 있다.
+  해당 뷰를 감싼 CALayer의 주소값으로 LLDB 디버깅을 통해 확인한다.
+  <img width="686" alt="스크린샷 2021-04-27 오후 2 54 12" src="https://user-images.githubusercontent.com/72292617/116192166-6e115880-a768-11eb-8dc3-cf67bfb0f0ac.png">
+  레이어의 투명도를 주기 위해 opacity 설정을 통해 0(투명)을 줄 수 있다. UIView의 투명도를 주기 위해서는 alpha 프로퍼티로 주어야한다. 
+  
+  
 
 #### Thinking Point🤔
 - 고민점 (1)
@@ -107,9 +117,31 @@
   }
   ```
 - 고민점 (3)
-  - "ㅇ
-  ``테
+  - "테스트를 진행할때 실패하는 테스트케이스의 작성이 왜 중요할까?"
+- 원인 및 대책
+  - TDD(Test Driven Develop)을 참고하였을때 테스트케이스를 먼저 작성하는 테스트 코드를 구현하고 이 후 구현을한다. 성공하는 테스트만 작성하게되면 이후 파생되는 다양한 변수에서 문제점을 발견할 수 없게되어 이후 유지보수를 두려워하게된다. 성공과 실패의 케이스를 모두 고려하여 테스트를 작성한 후 코드를 구현하는것이 바람직하다.
+
+- 고민점 (4)
+  - "지역별 온도의 표현단위가 다른것을 어떻게 표현해보면 좋을까요?"
+- 원인 및 대책
+  - 계산식을 통해 변환하거나 애플에서 제공하는 클래스 메서드를 사용하는 변환 방법이 있다. 이에 해당 프로젝트에서는 아래와 같이 메서드를 이용해보았다.
+  ```swift
+  var celsiusAverage: Double {
+      return UnitTemperature.celsius.converter.value(fromBaseUnitValue: self.average)
+  }
+  var celsiusMinimum: Double {
+      return UnitTemperature.celsius.converter.value(fromBaseUnitValue: self.minimum)
+  }
+  var celsiusMaximum: Double {
+      return UnitTemperature.celsius.converter.value(fromBaseUnitValue: self.maximum)
+  }
   ```
+  UnitTemperature의 기본 온도 표현 단위는 켈빈(절대온도)이다. 이 온도를 가지고 converter 메서드를 활용하여 celcious(섭씨)로 바꿔준다.
+  converter 메서드를 뜯어보면 아래와 같이 UnitConverter 클래스의 기능을 복사한다.
+  ```swift
+  @NSCopying var converter: UnitConverter { get }
+  ```
+  @NSCopying을 통해 converter 개체가 해당 기능을 복사하여 제공되도록 해준다.
 
 
 
