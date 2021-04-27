@@ -72,7 +72,8 @@
 - 해결방안
   - 해당 테이블 뷰 셀과 UIView의 투명도를 설정해주어 뒷 배경 이미지가 보이도록 할 수 있다.
   해당 뷰를 감싼 CALayer의 주소값으로 LLDB 디버깅을 통해 확인한다.
-  <img width="686" alt="스크린샷 2021-04-27 오후 2 54 12" src="https://user-images.githubusercontent.com/72292617/116192166-6e115880-a768-11eb-8dc3-cf67bfb0f0ac.png">
+  <img width="686" alt="스크린샷 2021-04-27 오후 2 54 12" src="https://user-images.githubusercontent.com/72292617/116192166-6e115880-a768-11eb-8dc3-cf67bfb0f0ac.png">   
+
   레이어의 투명도를 주기 위해 opacity 설정을 통해 0(투명)을 줄 수 있다. UIView의 투명도를 주기 위해서는 alpha 프로퍼티로 주어야한다. 
   
   
